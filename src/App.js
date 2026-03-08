@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Carousel from './composant/Carousel';
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <Carousel name="fawzi" email="test@fawi.com"/>
+      
     </div>
   );
 }
