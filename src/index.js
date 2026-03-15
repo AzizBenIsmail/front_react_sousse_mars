@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Navbar from './composant/Navbar';
-import Footer from './composant/Footer';
+// import App from './App';
+// import Navbar from './composant/Navbar';
+// import Footer from './composant/Footer';
+import Test from './composant/Test';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar/>
+    {/* <Navbar/>
     <App />
-    <Footer/>
+    <Footer/> */}
+    <Test/>
   </React.StrictMode>
 );
 
