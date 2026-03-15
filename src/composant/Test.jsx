@@ -1,10 +1,12 @@
-import React from 'react'
+import React , {useEffect , useState} from 'react'
 import './Test.css';
 export default function Test() {
     //logic
     //1 Constante
-    const name = "fawzi";
-    const age = 30;
+    //const name = "fawzi";
+    const [name , setName] = useState("fawzi"); //state => variable qui peut changer et qui est reactive
+    //const age = 30;
+    const [age, setAge] = useState(30); //state => variable qui peut changer et qui est reactive
     const element = <h5>hello {name}, your age is {age}</h5>
 
     //2 Objet
@@ -45,6 +47,37 @@ export default function Test() {
         {name : "ahmed", age : 35, email : "ahmed@example.com"},
         {name : "sara", age : 28}
     ];
+
+//useState => permet de créer une variable d'état qui peut changer et qui est reactive
+const [count, setCount] = useState(0);
+
+const [username, setUsername] = useState("2000");
+
+//1 useEffect(,[count]) => permet d'exécuter une fonction à chaque fois que la variable count change
+//2 useEffect(,[]) => permet d'exécuter une fonction une seule fois au montage du composant
+//3 useEffect() => permet d'exécuter une fonction à chaque re-render du composant
+
+    // useEffect(() => {
+    //   console.log('cette fonction va etre execute la premiere fois et a chaque modification de la variable count ');
+    //   console.log('car le deuxieme argument est count ');
+    //   return () => {
+    //   console. log('cette partie va etre execute pour nettoyer et lors de loperation unmounting ');
+    //   }
+    //   }, [count])
+      
+    //   useEffect(() => {
+    //   console.log('cette fonction va etre execute une fois seulement ');
+    //   console.log('car le deuxieme argument est un tableau vide ');
+    //   return () => {
+    //   console. log(' cette partie va etre execute seulement lors de loperation unmounting ')
+    //   }
+      
+    //   }, [])
+      
+    //   useEffect(() => {
+    //   console.log('cette fonction va etre execute chaque re-render');
+    //   console.log('car pas de deuxieme argument passer');
+    //   });
 
 
   return (
@@ -105,7 +138,14 @@ export default function Test() {
         ))}
     </ul>
 
+{/* 6 */}
+    <h2 style={{"color" : "red"}}>Count</h2> 
+    <p>Count: {count}</p>
+    <button onClick={() => setCount(count + 1)}>Increment</button>
 
+<h2 style={{"color":"red"}}>Username</h2>
+    <p>Username: {username}</p>
+    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Enter username" />
     </div>
   )
 }
